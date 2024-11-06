@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>AuthorizationManager</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            Mobile Payments SDK Android Technical Reference
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":reader-sdk-2:api:public:dokkaHtml/main">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Mobile Payments SDK Android Technical Reference::com.squareup.sdk.mobilepayments.authorization/AuthorizationManager///PointingToDeclaration//686381414">
+  <div class="breadcrumbs"><a href="../../../index.html">Mobile Payments SDK Android Technical Reference</a><span class="delimiter">/</span><a href="../index.html">com.squareup.sdk.mobilepayments.authorization</a><span class="delimiter">/</span><span class="current">AuthorizationManager</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Authorization</span><wbr></wbr><span><span>Manager</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">AuthorizationManager</a></div><p class="paragraph">Lets the application authorize and deauthorize Mobile Payments SDK to collect payments on behalf of a Square location.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1029224290%2FProperties%2F686381414" anchor-label="authorizationState" id="1029224290%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="authorization-state.html"><span>authorization</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1029224290%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="authorization-state.html">authorizationState</a><span class="token operator">: </span><a href="../-authorization-state/index.html">AuthorizationState</a></div><div class="brief "><p class="paragraph">Snapshot of the current authorization state. The returned <a href="../-authorization-state/index.html">AuthorizationState</a> is immutable and is NOT modified if the state changes. If you are looking for a way to track <a href="../-authorization-state/index.html">AuthorizationState</a>, register a callback with <a href="set-authorization-state-changed-callback.html">setAuthorizationStateChangedCallback</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1633076106%2FProperties%2F686381414" anchor-label="authorizedLocation" id="1633076106%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="authorized-location.html"><span>authorized</span><wbr></wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1633076106%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="authorized-location.html">authorizedLocation</a><span class="token operator">: </span><a href="../-authorized-location/index.html">AuthorizedLocation</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Snapshot of the <a href="../-authorized-location/index.html">AuthorizedLocation</a> if Mobile Payments SDK is currently authorized. <a href="../-authorized-location/index.html">AuthorizedLocation</a> is <code class="lang-kotlin">null</code> if not authorized.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1832717478%2FFunctions%2F686381414" anchor-label="authorize" id="1832717478%2FFunctions%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="authorize.html"><span><span>authorize</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1832717478%2FFunctions%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="authorize.html"><span class="token function">authorize</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">token<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">locationId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">callback<span class="token operator">: </span><a href="../../com.squareup.sdk.mobilepayments.core/-callback/index.html">Callback</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.squareup.sdk.mobilepayments.extensions/-authorize-result/index.html">AuthorizeResult</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.squareup.sdk.mobilepayments.core/-callback-reference/index.html">CallbackReference</a></div><div class="brief "><p class="paragraph">Asynchronously authorizes Mobile Payments SDK with an OAuth Access Token and Location ID. Applications must authorize Mobile Payments SDK before performing any other operations.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="411613848%2FFunctions%2F686381414" anchor-label="deauthorize" id="411613848%2FFunctions%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="deauthorize.html"><span><span>deauthorize</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="411613848%2FFunctions%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="deauthorize.html"><span class="token function">deauthorize</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Deauthorizes Mobile Payments SDK. Has no effect if the SDK is already in a deauthorized state.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="279451138%2FFunctions%2F686381414" anchor-label="setAuthorizationStateChangedCallback" id="279451138%2FFunctions%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-authorization-state-changed-callback.html"><span>set</span><wbr></wbr><span>Authorization</span><wbr></wbr><span>State</span><wbr></wbr><span>Changed</span><wbr></wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="279451138%2FFunctions%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-authorization-state-changed-callback.html"><span class="token function">setAuthorizationStateChangedCallback</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">callback<span class="token operator">: </span><a href="../../com.squareup.sdk.mobilepayments.core/-callback/index.html">Callback</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-authorization-state/index.html">AuthorizationState</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.squareup.sdk.mobilepayments.core/-callback-reference/index.html">CallbackReference</a></div><div class="brief "><p class="paragraph">Registers a <a href="set-authorization-state-changed-callback.html">callback</a> to be called when an authorization state changes. The supplied <a href="../../com.squareup.sdk.mobilepayments.core/-callback/index.html">Callback</a> will be called on the application UI thread when user is logged in or logged out. Important note: this callback will be called AFTER the authorization callback supplied to <a href="authorize.html">authorize</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

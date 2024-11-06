@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Payment</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            Mobile Payments SDK Android Technical Reference
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":reader-sdk-2:api:public:dokkaHtml/main">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Mobile Payments SDK Android Technical Reference::com.squareup.sdk.mobilepayments.payment/Payment///PointingToDeclaration//686381414">
+  <div class="breadcrumbs"><a href="../../../index.html">Mobile Payments SDK Android Technical Reference</a><span class="delimiter">/</span><a href="../index.html">com.squareup.sdk.mobilepayments.payment</a><span class="delimiter">/</span><span class="current">Payment</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Payment</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="index.html">Payment</a></div><p class="paragraph">The description of a completed payment, returned in the success value of Payment Result. All currency amounts are specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.</p><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="-online-payment/index.html">OnlinePayment</a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="-offline-payment/index.html">OfflinePayment</a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-283952984%2FClasslikes%2F686381414" anchor-label="Capabilities" id="-283952984%2FClasslikes%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-capabilities/index.html"><span><span>Capabilities</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-283952984%2FClasslikes%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-capabilities/index.html">Capabilities</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>allCapabilities<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actions that can be performed on a payment, e.g. modifying the tip amount up or down.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="755592987%2FClasslikes%2F686381414" anchor-label="OfflinePayment" id="755592987%2FClasslikes%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-offline-payment/index.html"><span>Offline</span><wbr></wbr><span><span>Payment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="755592987%2FClasslikes%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-offline-payment/index.html">OfflinePayment</a> : <a href="index.html">Payment</a></div><div class="brief "><p class="paragraph">The description of a completed payment, that was taken while Offline. All currency amounts are specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1583276977%2FClasslikes%2F686381414" anchor-label="OfflineStatus" id="-1583276977%2FClasslikes%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-offline-status/index.html"><span>Offline</span><wbr></wbr><span><span>Status</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1583276977%2FClasslikes%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-offline-status/index.html">OfflineStatus</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-offline-status/index.html">Payment.OfflineStatus</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">The status of the offline payment.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-920634991%2FClasslikes%2F686381414" anchor-label="OnlinePayment" id="-920634991%2FClasslikes%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-online-payment/index.html"><span>Online</span><wbr></wbr><span><span>Payment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-920634991%2FClasslikes%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-online-payment/index.html">OnlinePayment</a> : <a href="index.html">Payment</a></div><div class="brief "><p class="paragraph">The description of a completed payment, returned in the success value of Payment Result. All currency amounts are specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1088876919%2FClasslikes%2F686381414" anchor-label="SourceType" id="-1088876919%2FClasslikes%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-source-type/index.html"><span>Source</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1088876919%2FClasslikes%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-source-type/index.html">SourceType</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-source-type/index.html">Payment.SourceType</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">The source type of the payment.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1585498540%2FClasslikes%2F686381414" anchor-label="Status" id="1585498540%2FClasslikes%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-status/index.html"><span><span>Status</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1585498540%2FClasslikes%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-status/index.html">Status</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-status/index.html">Payment.Status</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">The status of the payment.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-1767304759%2FProperties%2F686381414" anchor-label="amountMoney" id="-1767304759%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="amount-money.html"><span>amount</span><wbr></wbr><span><span>Money</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1767304759%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="amount-money.html">amountMoney</a><span class="token operator">: </span><a href="../-money/index.html">Money</a></div><div class="brief "><p class="paragraph">The base amount of money processed for this payment, not including <a href="tip-money.html">tipMoney</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-362703274%2FProperties%2F686381414" anchor-label="appFeeMoney" id="-362703274%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="app-fee-money.html"><span>app</span><wbr></wbr><span>Fee</span><wbr></wbr><span><span>Money</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-362703274%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="app-fee-money.html">appFeeMoney</a><span class="token operator">: </span><a href="../-money/index.html">Money</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">The amount taken by the developer as a fee, not more than 90% of <a href="total-money.html">totalMoney</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1442109282%2FProperties%2F686381414" anchor-label="cashDetails" id="1442109282%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cash-details.html"><span>cash</span><wbr></wbr><span><span>Details</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1442109282%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="cash-details.html">cashDetails</a><span class="token operator">: </span><a href="../-cash-payment-details/index.html">CashPaymentDetails</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">An optional field for a cash payment that holds information such as the buyer supplied amount and the change the user should get back.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="491423798%2FProperties%2F686381414" anchor-label="createdAt" id="491423798%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="created-at.html"><span>created</span><wbr></wbr><span><span>At</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="491423798%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="created-at.html">createdAt</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/Date.html">Date</a></div><div class="brief "><p class="paragraph">Timestamp of when the payment was created.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1240798714%2FProperties%2F686381414" anchor-label="externalDetails" id="1240798714%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="external-details.html"><span>external</span><wbr></wbr><span><span>Details</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1240798714%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="external-details.html">externalDetails</a><span class="token operator">: </span><a href="../-external-payment-details/index.html">ExternalPaymentDetails</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Details about an external payment. The details are only populated if the <a href="source-type.html">sourceType</a> is <a href="-source-type/-e-x-t-e-r-n-a-l/index.html">SourceType.EXTERNAL</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="897039161%2FProperties%2F686381414" anchor-label="locationId" id="897039161%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="location-id.html"><span>location</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="897039161%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="location-id.html">locationId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">The ID of the location associated with the payment, if available.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="383322408%2FProperties%2F686381414" anchor-label="orderId" id="383322408%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="order-id.html"><span>order</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="383322408%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="order-id.html">orderId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">The ID of the order associated with this payment.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1058140427%2FProperties%2F686381414" anchor-label="referenceId" id="1058140427%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="reference-id.html"><span>reference</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1058140427%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="reference-id.html">referenceId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">An optional ID that associates this payment with an entity in another system.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1046318228%2FProperties%2F686381414" anchor-label="sourceType" id="1046318228%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="source-type.html"><span>source</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1046318228%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="source-type.html">sourceType</a><span class="token operator">: </span><a href="-source-type/index.html">Payment.SourceType</a></div><div class="brief "><p class="paragraph">The source type of the payment (card, cash, etc).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1318085284%2FProperties%2F686381414" anchor-label="tipMoney" id="1318085284%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tip-money.html"><span>tip</span><wbr></wbr><span><span>Money</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1318085284%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="tip-money.html">tipMoney</a><span class="token operator">: </span><a href="../-money/index.html">Money</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">The portion of <a href="total-money.html">totalMoney</a> that is designated as a tip.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2031735949%2FProperties%2F686381414" anchor-label="totalMoney" id="2031735949%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="total-money.html"><span>total</span><wbr></wbr><span><span>Money</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2031735949%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="total-money.html">totalMoney</a><span class="token operator">: </span><a href="../-money/index.html">Money</a></div><div class="brief "><p class="paragraph">Total money is defined as base amount plus any tip; it doesn't need its own storage allocated, and <i>definitely</i> doesn't need an independent setter.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-442066301%2FProperties%2F686381414" anchor-label="updatedAt" id="-442066301%2FProperties%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="updated-at.html"><span>updated</span><wbr></wbr><span><span>At</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-442066301%2FProperties%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="updated-at.html">updatedAt</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/Date.html">Date</a></div><div class="brief "><p class="paragraph">Timestamp when the payment was last updated.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="525996564%2FFunctions%2F686381414" anchor-label="asOfflinePayment" id="525996564%2FFunctions%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="as-offline-payment.html"><span>as</span><wbr></wbr><span>Offline</span><wbr></wbr><span><span>Payment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="525996564%2FFunctions%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="as-offline-payment.html"><span class="token function">asOfflinePayment</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-offline-payment/index.html">Payment.OfflinePayment</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1097027600%2FFunctions%2F686381414" anchor-label="asOnlinePayment" id="1097027600%2FFunctions%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="as-online-payment.html"><span>as</span><wbr></wbr><span>Online</span><wbr></wbr><span><span>Payment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1097027600%2FFunctions%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="as-online-payment.html"><span class="token function">asOnlinePayment</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-online-payment/index.html">Payment.OnlinePayment</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2074383844%2FFunctions%2F686381414" anchor-label="isOfflinePayment" id="-2074383844%2FFunctions%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-offline-payment.html"><span>is</span><wbr></wbr><span>Offline</span><wbr></wbr><span><span>Payment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2074383844%2FFunctions%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-offline-payment.html"><span class="token function">isOfflinePayment</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-95234296%2FFunctions%2F686381414" anchor-label="isOnlinePayment" id="-95234296%2FFunctions%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-online-payment.html"><span>is</span><wbr></wbr><span>Online</span><wbr></wbr><span><span>Payment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-95234296%2FFunctions%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-online-payment.html"><span class="token function">isOnlinePayment</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

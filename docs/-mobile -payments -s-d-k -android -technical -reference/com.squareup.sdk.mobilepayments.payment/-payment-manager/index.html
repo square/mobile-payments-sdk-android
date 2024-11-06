@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>PaymentManager</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            Mobile Payments SDK Android Technical Reference
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":reader-sdk-2:api:public:dokkaHtml/main">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Mobile Payments SDK Android Technical Reference::com.squareup.sdk.mobilepayments.payment/PaymentManager///PointingToDeclaration//686381414">
+  <div class="breadcrumbs"><a href="../../../index.html">Mobile Payments SDK Android Technical Reference</a><span class="delimiter">/</span><a href="../index.html">com.squareup.sdk.mobilepayments.payment</a><span class="delimiter">/</span><span class="current">PaymentManager</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Payment</span><wbr></wbr><span><span>Manager</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">PaymentManager</a></div><p class="paragraph">Processes payments for Mobile Payments SDK.</p><p class="paragraph"><code class="lang-kotlin">PaymentManager</code> is a singleton instance, retrieved from <a href="../../com.squareup.sdk.mobilepayments/-mobile-payments-sdk/payment-manager.html">MobilePaymentsSdk.paymentManager</a> like the other managers. Use it by starting a payment with <a href="start-payment-activity.html">startPaymentActivity</a>.</p><p class="paragraph">When calling <a href="start-payment-activity.html">startPaymentActivity</a>, the developer has an option to either use the default payment prompt screen or provide a custom one (see <a href="../-prompt-mode/index.html">PromptMode</a>). This screen is where the customer is asked to swipe, insert, or tap a card.</p><p class="paragraph">If the custom screen is used, the Mobile Payments SDK will take control over UI, once the customer interacts with the card reader.</p><p class="paragraph">During the payment flow, Mobile Payments SDK will show screens (for example, to collect PIN numbers, and to confirm the completed transaction to the user), which will be dismissed by the time the payment completion callback is called.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1523182117%2FFunctions%2F686381414" anchor-label="completePayment" id="1523182117%2FFunctions%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="complete-payment.html"><span>complete</span><wbr></wbr><span><span>Payment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1523182117%2FFunctions%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="complete-payment.html"><span class="token function">completePayment</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">paymentId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">callback<span class="token operator">: </span><a href="../../com.squareup.sdk.mobilepayments.core/-callback/index.html">Callback</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.squareup.sdk.mobilepayments.extensions/-payment-result/index.html">PaymentResult</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-payment-handle/index.html">PaymentHandle</a></div><div class="brief "><p class="paragraph">Completes a previously-authorized payment.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-73791363%2FFunctions%2F686381414" anchor-label="getAvailableCardEntryMethods" id="-73791363%2FFunctions%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-available-card-entry-methods.html"><span>get</span><wbr></wbr><span>Available</span><wbr></wbr><span>Card</span><wbr></wbr><span>Entry</span><wbr></wbr><span><span>Methods</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-73791363%2FFunctions%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-available-card-entry-methods.html"><span class="token function">getAvailableCardEntryMethods</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.squareup.sdk.mobilepayments.cardreader/-card-entry-method/index.html">CardEntryMethod</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Retrieves the possible card entry methods to take a payment. This is the union of all the several card readers' supported card entry methods.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1405157464%2FFunctions%2F686381414" anchor-label="getOfflinePaymentQueue" id="-1405157464%2FFunctions%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-offline-payment-queue.html"><span>get</span><wbr></wbr><span>Offline</span><wbr></wbr><span>Payment</span><wbr></wbr><span><span>Queue</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1405157464%2FFunctions%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-offline-payment-queue.html"><span class="token function">getOfflinePaymentQueue</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-offline-payment-queue/index.html">OfflinePaymentQueue</a></div><div class="brief "><p class="paragraph">Returns an <a href="../-offline-payment-queue/index.html">OfflinePaymentQueue</a> interface, used to interact with offline payments.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1169184001%2FFunctions%2F686381414" anchor-label="setAvailableCardEntryMethodChangedCallback" id="-1169184001%2FFunctions%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-available-card-entry-method-changed-callback.html"><span>set</span><wbr></wbr><span>Available</span><wbr></wbr><span>Card</span><wbr></wbr><span>Entry</span><wbr></wbr><span>Method</span><wbr></wbr><span>Changed</span><wbr></wbr><span><span>Callback</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1169184001%2FFunctions%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-available-card-entry-method-changed-callback.html"><span class="token function">setAvailableCardEntryMethodChangedCallback</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">callback<span class="token operator">: </span><a href="../../com.squareup.sdk.mobilepayments.core/-callback/index.html">Callback</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.squareup.sdk.mobilepayments.cardreader/-card-entry-method/index.html">CardEntryMethod</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.squareup.sdk.mobilepayments.core/-callback-reference/index.html">CallbackReference</a></div><div class="brief "><p class="paragraph">Registers a callback to notify the application when the set of available card entry methods changes. For example, as a magstripe reader is inserted or removed, this callback will be called to reflect the availability of the <a href="../../com.squareup.sdk.mobilepayments.cardreader/-card-entry-method/-s-w-i-p-e-d/index.html">SWIPED</a> card entry method.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="613597764%2FFunctions%2F686381414" anchor-label="startPaymentActivity" id="613597764%2FFunctions%2F686381414" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public:dokkaHtml/main" data-filterable-set=":reader-sdk-2:api:public:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="start-payment-activity.html"><span>start</span><wbr></wbr><span>Payment</span><wbr></wbr><span><span>Activity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="613597764%2FFunctions%2F686381414"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="start-payment-activity.html"><span class="token function">startPaymentActivity</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">paymentParameters<span class="token operator">: </span><a href="../-payment-parameters/index.html">PaymentParameters</a><span class="token punctuation">, </span></span><span class="parameter ">promptParameters<span class="token operator">: </span><a href="../-prompt-parameters/index.html">PromptParameters</a><span class="token punctuation">, </span></span><span class="parameter ">callback<span class="token operator">: </span><a href="../../com.squareup.sdk.mobilepayments.core/-callback/index.html">Callback</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.squareup.sdk.mobilepayments.extensions/-payment-result/index.html">PaymentResult</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-payment-handle/index.html">PaymentHandle</a></div><div class="brief "><p class="paragraph">Begins a payment, using the provided <a href="start-payment-activity.html">paymentParameters</a> to set the payment information.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
