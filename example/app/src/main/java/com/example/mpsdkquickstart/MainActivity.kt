@@ -451,8 +451,8 @@ fun PermissionsDialog() {
           HorizontalDivider(thickness = 1.dp)
           PermissionsRow(
             title = "Location",
-            description = "Square used location to know where transactions take place. This" +
-              "reduces risk and minimizes payment disputes. ",
+            description = "Square uses location to know where transactions take place. " +
+              "This reduces risk and minimizes payment disputes. ",
             permissionsToRequest = arrayOf(
               android.Manifest.permission.ACCESS_COARSE_LOCATION,
               android.Manifest.permission.ACCESS_FINE_LOCATION,
@@ -461,9 +461,9 @@ fun PermissionsDialog() {
           HorizontalDivider(thickness = 1.dp)
           PermissionsRow(
             title = "Microphone",
-            description = "Square’s R4 reader uses the microphone jack to communicate payment card" +
-              "data to your device.\n" +
-              "You should ask for this permission if you are using an R4 reader.",
+            description = "Square Reader for magstripe uses the microphone to communicate " +
+              "payment card data to your device.\n" +
+              "You should ask for this permission if you are using a magstripe reader.",
             permissionsToRequest = arrayOf(
               android.Manifest.permission.RECORD_AUDIO,
             )
@@ -471,8 +471,9 @@ fun PermissionsDialog() {
           HorizontalDivider(thickness = 1.dp)
           PermissionsRow(
             title = "Read Phone State",
-            description = "Square uses phone state to identify the device sending information " +
-              "to Square servers.",
+            description = "Square needs phone access in order to uniquely identify the devices " +
+              "associated with your account and ensure that unauthorized devices are not able to " +
+              "act on your behalf.",
             permissionsToRequest = arrayOf(
               android.Manifest.permission.READ_PHONE_STATE,
             )
