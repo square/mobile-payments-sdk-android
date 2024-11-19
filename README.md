@@ -2,7 +2,7 @@
 
 This is a sample application for building with the Square [Mobile Payments SDK](https://developer.squareup.com/docs/mobile-payments-sdk) on Android. It creates a simple application that demonstrates installing, initializing, and authorizing the SDK, as well as taking a $1.00 payment with the Sandbox mock reader. To get started, clone this repo and follow the steps below.
 
-> For more detailed steps on adding the SDK to your application, please see the [long form documentation](https://developer.squareup.com/docs/mobile-payments-sdk/android).
+> For more detailed steps on adding the SDK to your application, please see the [longform documentation](https://developer.squareup.com/docs/mobile-payments-sdk/android).
 
 <img src="./images/main_screen.png" width=200>
 
@@ -60,7 +60,7 @@ For more information on using `AuthorizationManager` see [Authorize your Android
 
 After authorizing, close the Permissions dialog to return to the main screen.
 
-Note that since you're authorized in Sandbox mode, the floating Mock Reader UI button is diaplayed (via `MockReaderUI.show()`).
+Note that since you're authorized in Sandbox mode, the floating [Mock Reader UI](https://developer.squareup.com/docs/mobile-payments-sdk/android#4-test-with-mock-readers-in-the-square-sandbox) button is displayed (via `MockReaderUI.show()`).
 
 <img src="./images/mock_reader_button.webp">
 
