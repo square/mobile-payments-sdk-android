@@ -31,6 +31,8 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -69,15 +71,28 @@ class MainActivity : ComponentActivity() {
     enableEdgeToEdge()
     setContent {
       MPSDKQuickstartTheme {
-        MainScreen(MobilePaymentsSdk.authorizationManager().authorizationState.isAuthorized)
-      }
-    }
+        var isAuthorized by remember { mutableStateOf(MobilePaymentsSdk.authorizationManager().authorizationState.isAuthorized) }
 
-    // Show mock reader if application is authorized and in Sandbox environment
-    if (MobilePaymentsSdk.authorizationManager().authorizationState.isAuthorized &&
-      MobilePaymentsSdk.isSandboxEnvironment()
-    ) {
-      MockReaderUI.show()
+        DisposableEffect(Unit) {
+          // Add callback and update isAuthorized from the callback
+          val callback = MobilePaymentsSdk.authorizationManager().setAuthorizationStateChangedCallback { result ->
+            isAuthorized = result.isAuthorized
+          }
+
+          // Make sure to clear the callback when the composable is disposed
+          onDispose {
+            callback.clear()
+          }
+        }
+
+        LaunchedEffect(isAuthorized) {
+          if (isAuthorized && MobilePaymentsSdk.isSandboxEnvironment()) {
+            MockReaderUI.show()
+          }
+        }
+
+        MainScreen(isAuthorized = isAuthorized)
+      }
     }
   }
 }
@@ -95,7 +110,7 @@ fun MainScreen(isAuthorized: Boolean) {
       horizontalArrangement = Arrangement.SpaceBetween,
     ) {
       SettingsButton()
-      PermissionsDialog()
+      PermissionsDialog(isAuthorized)
     }
     Row(
       modifier = Modifier
@@ -377,7 +392,9 @@ fun AuthorizationStatusSignInButton(isAuthorized: Boolean) {
 }
 
 @Composable
-fun PermissionsDialog() {
+fun PermissionsDialog(
+  isAuthorized: Boolean
+) {
   var showPermissionsDialog by remember { mutableStateOf(false) }
   Column {
     FilledTonalButton(
@@ -478,10 +495,8 @@ fun PermissionsDialog() {
               android.Manifest.permission.READ_PHONE_STATE,
             )
           )
-          AuthorizeButton(MobilePaymentsSdk.authorizationManager().authorizationState.isAuthorized)
-          AuthorizationStatusSignInButton(
-            MobilePaymentsSdk.authorizationManager().authorizationState.isAuthorized
-          )
+          AuthorizeButton(isAuthorized)
+          AuthorizationStatusSignInButton(isAuthorized)
         }
       }
     }
