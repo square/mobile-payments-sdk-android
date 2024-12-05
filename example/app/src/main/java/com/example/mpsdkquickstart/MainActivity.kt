@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
@@ -52,6 +53,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getString
 import com.example.mpsdkquickstart.ui.theme.MPSDKQuickstartTheme
 import com.squareup.sdk.mobilepayments.MobilePaymentsSdk
+import com.squareup.sdk.mobilepayments.authorization.AuthorizeErrorCode
 import com.squareup.sdk.mobilepayments.core.Result.Failure
 import com.squareup.sdk.mobilepayments.core.Result.Success
 import com.squareup.sdk.mobilepayments.mockreader.ui.MockReaderUI
@@ -269,7 +271,10 @@ fun PermissionsCheckbox(permissionsToRequest: Array<String>) {
 }
 
 @Composable
-fun AuthorizeButton(isAuthorized: Boolean) {
+fun AuthorizeButton(
+  isAuthorized: Boolean,
+  onAuthorizationFailure: (AuthorizationError) -> Unit
+) {
   val context = LocalContext.current
   if (isAuthorized) {
     // Sign out button
@@ -288,7 +293,12 @@ fun AuthorizeButton(isAuthorized: Boolean) {
     // Sign in button
     Button(
       modifier = Modifier.fillMaxWidth(),
-      onClick = { authorizeSdk(context) },
+      onClick = {
+        authorizeSdk(
+          context = context,
+          onAuthorizationFailure = onAuthorizationFailure
+        )
+      },
       shape = RoundedCornerShape(6.dp),
       colors = ButtonDefaults.filledTonalButtonColors(
         containerColor = Color(0xFF006AFF),
@@ -300,7 +310,10 @@ fun AuthorizeButton(isAuthorized: Boolean) {
   }
 }
 
-fun authorizeSdk(context: Context) {
+fun authorizeSdk(
+  context: Context,
+  onAuthorizationFailure: (AuthorizationError) -> Unit
+) {
   val authorizationManager = MobilePaymentsSdk.authorizationManager()
   // Authorize and handle authorization successes or failures
   authorizationManager.authorize(
@@ -316,7 +329,7 @@ fun authorizeSdk(context: Context) {
       }
 
       is Failure -> {
-        // TODO show an error dialog with `result.errorCode` / `result.errorMessage`
+        onAuthorizationFailure(AuthorizationError(result.errorCode, result.errorMessage))
       }
     }
   }
@@ -379,6 +392,8 @@ fun AuthorizationStatusSignInButton(isAuthorized: Boolean) {
 @Composable
 fun PermissionsDialog() {
   var showPermissionsDialog by remember { mutableStateOf(false) }
+  var authorizationErrorDetails: AuthorizationError? by remember { mutableStateOf(null) }
+
   Column {
     FilledTonalButton(
       onClick = { showPermissionsDialog = true },
@@ -393,6 +408,7 @@ fun PermissionsDialog() {
       )
     }
   }
+
   if (showPermissionsDialog) {
     Dialog(
       properties = DialogProperties(usePlatformDefaultWidth = false),
@@ -478,7 +494,10 @@ fun PermissionsDialog() {
               android.Manifest.permission.READ_PHONE_STATE,
             )
           )
-          AuthorizeButton(MobilePaymentsSdk.authorizationManager().authorizationState.isAuthorized)
+          AuthorizeButton(
+            isAuthorized = MobilePaymentsSdk.authorizationManager().authorizationState.isAuthorized,
+            onAuthorizationFailure = { authorizationError -> authorizationErrorDetails = authorizationError }
+          )
           AuthorizationStatusSignInButton(
             MobilePaymentsSdk.authorizationManager().authorizationState.isAuthorized
           )
@@ -486,7 +505,26 @@ fun PermissionsDialog() {
       }
     }
   }
+
+  if (authorizationErrorDetails != null) {
+    AlertDialog(
+      onDismissRequest = { authorizationErrorDetails = null },
+      confirmButton = {
+        Button(onClick = { authorizationErrorDetails = null }) { Text("Ok") }
+      },
+      title = { Text(text = authorizationErrorDetails?.authorizeErrorCode?.name.orEmpty()) },
+      text = { Text(text = authorizationErrorDetails?.authorizationMessage.orEmpty()) }
+    )
+  }
 }
+
+/**
+ * Represents an error coming from the SDK authorization call
+ */
+data class AuthorizationError(
+  val authorizeErrorCode: AuthorizeErrorCode,
+  val authorizationMessage: String
+)
 
 @Preview(showBackground = true)
 @Composable
