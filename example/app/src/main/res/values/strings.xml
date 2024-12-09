@@ -1,5 +1,25 @@
 <resources>
   <string name="app_name">Donut Counter</string>
   <string name="main_image_description">Graphic of brown donut with pink frosting.</string>
+  <string name="buy_for_1">Buy for $1</string>
+  <string name="donut_counter">Donut Counter</string>
+  <string name="not_authorized_warning_icon">Not authorized warning icon</string>
+  <string name="device_not_authorized_open_permissions_to_authorize">Device not authorized. Open permissions to authorize.</string>
+  <string name="settings">Settings</string>
+  <string name="permissions">Permissions</string>
   <string name="ok">OK</string>
+  <string name="sign_out">Sign out</string>
+  <string name="sign_in">Sign in</string>
+  <string name="device_not_authorized">Device not authorized</string>
+  <string name="authorized_checkmark_icon">Authorized checkmark icon</string>
+  <string name="this_device_is_authorized">This device is authorized</string>
+  <string name="read_phone_state_permission_title">Read Phone State</string>
+  <string name="read_phone_state_permission_description">Square needs phone access in order to uniquely identify the devices associated with your account and ensure that unauthorized devices are not able to act on your behalf.</string>
+  <string name="microphone_permission_title">Microphone</string>
+  <string name="microphone_permission_description">Square Reader for magstripe uses the microphone to communicate payment card data to your device.\nYou should ask for this permission if you are using a magstripe reader.</string>
+  <string name="location_permission_title">Location</string>
+  <string name="location_permission_description">"Square uses location to know where transactions take place. This reduces risk and minimizes payment disputes. "</string>
+  <string name="bluetooth_permission_title">Bluetooth</string>
+  <string name="bluetooth_permission_description">Square uses Bluetooth to connect and communicate with Square devices.\nYou should ask for this permission if you are using readers that connect via Bluetooth.</string>
+  <string name="close_button_for_permissions_dialog">Close button for Permissions dialog</string>
 </resources>
