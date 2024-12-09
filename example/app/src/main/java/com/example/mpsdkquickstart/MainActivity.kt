@@ -61,6 +61,7 @@ import com.squareup.sdk.mobilepayments.core.Result.Success
 import com.squareup.sdk.mobilepayments.mockreader.ui.MockReaderUI
 import com.squareup.sdk.mobilepayments.payment.CurrencyCode.USD
 import com.squareup.sdk.mobilepayments.payment.Money
+import com.squareup.sdk.mobilepayments.payment.PaymentErrorCode
 import com.squareup.sdk.mobilepayments.payment.PaymentParameters
 import com.squareup.sdk.mobilepayments.payment.PromptMode
 import com.squareup.sdk.mobilepayments.payment.PromptParameters
@@ -101,6 +102,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(isAuthorized: Boolean) {
+  var startPaymentErrorDetails: StartPaymentError? by remember { mutableStateOf(null) }
+
   Column(
     modifier = Modifier
       .safeDrawingPadding()
@@ -134,8 +137,18 @@ fun MainScreen(isAuthorized: Boolean) {
         fontWeight = FontWeight(700)
       )
     }
-    BuyButton(isAuthorized)
+    BuyButton(
+      isAuthorized = isAuthorized,
+      onStartPaymentError = { startPaymentErrorDetails = it }
+    )
     AuthorizationStatusBuyButton(isAuthorized)
+  }
+
+  if (startPaymentErrorDetails != null) {
+    StartPaymentErrorDialog(
+      startPaymentError = startPaymentErrorDetails,
+      onDismiss = { startPaymentErrorDetails = null }
+    )
   }
 }
 
@@ -179,10 +192,13 @@ fun DonutImage() {
 }
 
 @Composable
-fun BuyButton(isAuthorized: Boolean) {
+fun BuyButton(
+  isAuthorized: Boolean,
+  onStartPaymentError: (StartPaymentError) -> Unit
+) {
   Button(
     modifier = Modifier.fillMaxWidth(),
-    onClick = { startPaymentActivity() },
+    onClick = { startPaymentActivity(onStartPaymentError) },
     enabled = isAuthorized,
     shape = RoundedCornerShape(6.dp),
     colors = ButtonDefaults.filledTonalButtonColors(
@@ -199,7 +215,9 @@ fun BuyButton(isAuthorized: Boolean) {
   }
 }
 
-fun startPaymentActivity() {
+fun startPaymentActivity(
+  onStartPaymentError: (StartPaymentError) -> Unit
+) {
   val paymentManager = MobilePaymentsSdk.paymentManager()
   // Configure the payment parameters
   val paymentParams = PaymentParameters.Builder(
@@ -219,7 +237,10 @@ fun startPaymentActivity() {
     // Callback to handle the payment result
     when (result) {
       is Success -> Log.i("Payment", "Success")
-      is Failure -> Log.i("Payment", "Failed")
+      is Failure -> {
+        Log.e("Payment", "Start payment failed: ${result.errorCode}-${result.errorMessage}")
+        onStartPaymentError(StartPaymentError(result.errorCode, result.errorMessage))
+      }
     }
   }
 }
@@ -525,12 +546,27 @@ fun PermissionsDialog(
     AlertDialog(
       onDismissRequest = { authorizationErrorDetails = null },
       confirmButton = {
-        Button(onClick = { authorizationErrorDetails = null }) { Text("Ok") }
+        Button(onClick = { authorizationErrorDetails = null }) { Text(stringResource(R.string.ok)) }
       },
       title = { Text(text = authorizationErrorDetails?.authorizeErrorCode?.name.orEmpty()) },
       text = { Text(text = authorizationErrorDetails?.authorizationMessage.orEmpty()) }
     )
   }
+}
+
+@Composable
+fun StartPaymentErrorDialog(
+  startPaymentError: StartPaymentError?,
+  onDismiss: () -> Unit
+) {
+  AlertDialog(
+    onDismissRequest = onDismiss,
+    confirmButton = {
+      Button(onClick = onDismiss) { Text(stringResource(R.string.ok)) }
+    },
+    title = { Text(text = startPaymentError?.errorCode?.name.orEmpty()) },
+    text = { Text(text = startPaymentError?.errorMessage.orEmpty()) }
+  )
 }
 
 /**
@@ -539,6 +575,14 @@ fun PermissionsDialog(
 data class AuthorizationError(
   val authorizeErrorCode: AuthorizeErrorCode,
   val authorizationMessage: String
+)
+
+/**
+ * Represents and error coming from the SDK start payment activity call
+ */
+data class StartPaymentError(
+  val errorCode: PaymentErrorCode,
+  val errorMessage: String
 )
 
 @Preview(showBackground = true)
