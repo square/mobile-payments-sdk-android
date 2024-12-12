@@ -19,7 +19,7 @@ On the application's Credentials page ensure that the toggle at the top is set t
 Click "Locations" in the left navigation and make note of the Default Test Account's **Sandbox Location ID** as well. These values will be used in the next step.
 
 ## 3. Set credentials
-Add the values from Step 2 into `app/src/main/res/values/credentials.xml`, replacing `SANDBOX APPLICATION ID`, `SANDBOX ACCESS TOKEN`, and `SANDBOX LOCATION ID` respectively:
+Add the values from Step 2 into `app/src/main/res/values/environments.xml`, replacing `SANDBOX APPLICATION ID`, `SANDBOX ACCESS TOKEN`, and `SANDBOX LOCATION ID` respectively:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
