@@ -49,7 +49,7 @@ android {
 dependencies {
   implementation(libs.androidx.fragment.ktx)
   implementation(libs.androidx.appcompat)
-  val squareSdkVersion = "2.0.0-beta5"
+  val squareSdkVersion = "2.0.2"
   // Mobile Payments SDK dependency
   implementation("com.squareup.sdk:mobile-payments-sdk:$squareSdkVersion")
 
