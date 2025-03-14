@@ -34,8 +34,11 @@ import com.squareup.sdk.mobilepayments.core.Result.Failure
 import com.squareup.sdk.mobilepayments.core.Result.Success
 import com.squareup.sdk.mobilepayments.payment.CurrencyCode.USD
 import com.squareup.sdk.mobilepayments.payment.Money
+import com.squareup.sdk.mobilepayments.payment.Payment.OfflinePayment
+import com.squareup.sdk.mobilepayments.payment.Payment.OnlinePayment
 import com.squareup.sdk.mobilepayments.payment.PaymentErrorCode
 import com.squareup.sdk.mobilepayments.payment.PaymentParameters
+import com.squareup.sdk.mobilepayments.payment.ProcessingMode.AUTO_DETECT
 import com.squareup.sdk.mobilepayments.payment.PromptMode
 import com.squareup.sdk.mobilepayments.payment.PromptParameters
 import java.util.UUID
@@ -203,6 +206,7 @@ fun startPaymentActivity(
     .referenceId("1234")
     .note("Donut")
     .autocomplete(true)
+    .processingMode(AUTO_DETECT)
     .build()
   // Configure the prompt parameters
   val promptParams = PromptParameters(
@@ -212,7 +216,16 @@ fun startPaymentActivity(
   paymentManager.startPaymentActivity(paymentParams, promptParams) { result ->
     // Callback to handle the payment result
     when (result) {
-      is Success -> Log.i(TAG, "Success")
+      is Success -> {
+        when (val payment = result.value) {
+          is OnlinePayment -> {
+            Log.i(TAG, "Successful online payment ${payment.id}")
+          }
+          is OfflinePayment -> {
+            Log.i(TAG, "Successful offline payment ${payment.localId}")
+          }
+        }
+      }
       is Failure -> {
         Log.e(TAG, "Start payment failed: ${result.errorCode}-${result.errorMessage}")
         onStartPaymentError(StartPaymentError(result.errorCode, result.errorMessage))
