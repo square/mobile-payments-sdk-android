@@ -201,12 +201,12 @@ fun startPaymentActivity(
   // Configure the payment parameters
   val paymentParams = PaymentParameters.Builder(
     amount = Money(100, USD), // $1
-    idempotencyKey = UUID.randomUUID().toString()
+    idempotencyKey = UUID.randomUUID().toString(),
+    processingMode = AUTO_DETECT
   )
     .referenceId("1234")
     .note("Donut")
     .autocomplete(true)
-    .processingMode(AUTO_DETECT)
     .build()
   // Configure the prompt parameters
   val promptParams = PromptParameters(
