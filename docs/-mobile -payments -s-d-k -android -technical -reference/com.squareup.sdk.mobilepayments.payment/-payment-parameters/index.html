@@ -67,7 +67,7 @@
   <div class="breadcrumbs"><a href="../../../index.html">Mobile Payments SDK Android Technical Reference</a><span class="delimiter">/</span><a href="../index.html">com.squareup.sdk.mobilepayments.payment</a><span class="delimiter">/</span><span class="current">PaymentParameters</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Payment</span><wbr></wbr><span><span>Parameters</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">PaymentParameters</a></div><p class="paragraph">Parameters to describe a single payment made using Mobile Payments SDK. Use <a href="-builder/index.html">Builder</a> to create and configure payment parameters, for example:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val paymentParameters = PaymentParameters.Builder(Money(350, USD), &quot;idempotency-key&quot;)<br>   .autocomplete(true)<br>   .orderId(&quot;YZ2319D&quot;)<br>   .tipMoney(Money(100, USD))<br>   .referenceId(&quot;1314387&quot;)<br>   .build()</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">PaymentParameters</a></div><p class="paragraph">Parameters to describe a single payment made using Mobile Payments SDK. Use <a href="-builder/index.html">Builder</a> to create and configure payment parameters, for example:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val paymentParameters = PaymentParameters.Builder(Money(350, USD), AUTO_DETECT)<br>   .paymentAttemptId(&quot;SK95TM0&quot;)<br>   .autocomplete(true)<br>   .orderId(&quot;YZ2319D&quot;)<br>   .tipMoney(Money(100, USD))<br>   .referenceId(&quot;1314387&quot;)<br>   .build()</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
@@ -84,7 +84,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-builder/index.html">Builder</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">amount<span class="token operator">: </span><a href="../-money/index.html">Money</a><span class="token punctuation">, </span></span><span class="parameter ">idempotencyKey<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">The builder used to create <a href="index.html">PaymentParameters</a>. Create a Builder for a payment of a specific <span data-unresolved-link="com.squareup.sdk.mobilepayments.payment/PaymentParameters.Builder/amount/#/PointingToDeclaration/">amount</span> of money with provided <span data-unresolved-link="com.squareup.sdk.mobilepayments.payment/PaymentParameters.Builder/idempotencyKey/#/PointingToDeclaration/">idempotencyKey</span>.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-builder/index.html">Builder</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">amount<span class="token operator">: </span><a href="../-money/index.html">Money</a><span class="token punctuation">, </span></span><span class="parameter ">processingMode<span class="token operator">: </span><a href="../-processing-mode/index.html">ProcessingMode</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">The builder used to create <a href="index.html">PaymentParameters</a>. An <span data-unresolved-link="com.squareup.sdk.mobilepayments.payment/PaymentParameters.Builder/amount/#/PointingToDeclaration/">amount</span> of money and <span data-unresolved-link="com.squareup.sdk.mobilepayments.payment/PaymentParameters.Builder/processingMode/#/PointingToDeclaration/">processingMode</span> are required to build a <a href="index.html">PaymentParameters</a>. In addition, <a href="-builder/payment-attempt-id.html">Builder.paymentAttemptId</a> or (deprecated) <span data-unresolved-link="com.squareup.sdk.mobilepayments.payment/PaymentParameters.Builder/idempotencyKey/#kotlin.String?/PointingToDeclaration/">Builder.idempotencyKey</span> must be set.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -198,21 +198,6 @@
               </div>
             </div>
           </div>
-<a data-name="-2100387163%2FProperties%2F-828611219" anchor-label="idempotencyKey" id="-2100387163%2FProperties%2F-828611219" data-filterable-set=":reader-sdk-2:api:public/main"></a>
-          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public/main" data-filterable-set=":reader-sdk-2:api:public/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="idempotency-key.html"><span>idempotency</span><wbr></wbr><span><span>Key</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2100387163%2FProperties%2F-828611219"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="idempotency-key.html">idempotencyKey</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph"><a href="idempotency-key.html">idempotencyKey</a> a unique string to identify &quot;this&quot; payment.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
 <a data-name="-1524994429%2FProperties%2F-828611219" anchor-label="locationId" id="-1524994429%2FProperties%2F-828611219" data-filterable-set=":reader-sdk-2:api:public/main"></a>
           <div class="table-row" data-filterable-current=":reader-sdk-2:api:public/main" data-filterable-set=":reader-sdk-2:api:public/main">
             <div class="main-subrow keyValue ">
@@ -258,6 +243,21 @@
               </div>
             </div>
           </div>
+<a data-name="1503004817%2FProperties%2F-828611219" anchor-label="paymentAttemptId" id="1503004817%2FProperties%2F-828611219" data-filterable-set=":reader-sdk-2:api:public/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public/main" data-filterable-set=":reader-sdk-2:api:public/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="payment-attempt-id.html"><span>payment</span><wbr></wbr><span>Attempt</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1503004817%2FProperties%2F-828611219"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="payment-attempt-id.html">paymentAttemptId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">A unique identifier for the payment attempted with <a href="../-payment-manager/start-payment-activity.html">PaymentManager.startPaymentActivity</a>. When provided, Mobile Payments SDK generates a unique idempotency key for the payment request and stores it with the payment attempt ID. If multiple payment requests are made for the same payment attempt (e.g. due to Strong Customer Authentication (SCA) requirements in Europe), the SDK generates a new idempotency key for each request and replaces the stored idempotency key for the payment attempt ID.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="580451997%2FProperties%2F-828611219" anchor-label="processingMode" id="580451997%2FProperties%2F-828611219" data-filterable-set=":reader-sdk-2:api:public/main"></a>
           <div class="table-row" data-filterable-current=":reader-sdk-2:api:public/main" data-filterable-set=":reader-sdk-2:api:public/main">
             <div class="main-subrow keyValue ">
@@ -268,7 +268,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="processing-mode.html">processingMode</a><span class="token operator">: </span><a href="../-processing-mode/index.html">ProcessingMode</a></div><div class="brief "><p class="paragraph">The <a href="processing-mode.html">processingMode</a> parameter determines whether the current payment needs to be processed online or offline. By default, this will be ONLINE_ONLY unless explicitly set.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="processing-mode.html">processingMode</a><span class="token operator">: </span><a href="../-processing-mode/index.html">ProcessingMode</a></div><div class="brief "><p class="paragraph">The <a href="processing-mode.html">processingMode</a> parameter determines whether the current payment needs to be processed online or offline. By default, this will be <a href="../-processing-mode/-a-u-t-o_-d-e-t-e-c-t/index.html">AUTO_DETECT</a> unless explicitly set.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -337,17 +337,17 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="">Functions</h2>
-        <div class="table"><a data-name="907049765%2FFunctions%2F-828611219" anchor-label="buildUpon" id="907049765%2FFunctions%2F-828611219" data-filterable-set=":reader-sdk-2:api:public/main"></a>
+        <div class="table"><a data-name="-1159416769%2FFunctions%2F-828611219" anchor-label="buildUpon" id="-1159416769%2FFunctions%2F-828611219" data-filterable-set=":reader-sdk-2:api:public/main"></a>
           <div class="table-row" data-filterable-current=":reader-sdk-2:api:public/main" data-filterable-set=":reader-sdk-2:api:public/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="build-upon.html"><span>build</span><wbr></wbr><span><span>Upon</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="907049765%2FFunctions%2F-828611219"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1159416769%2FFunctions%2F-828611219"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">fun </span><a href="build-upon.html"><span class="token function">buildUpon</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">newIdempotencyKey<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>idempotencyKey</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-builder/index.html">PaymentParameters.Builder</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="build-upon.html"><span class="token function">buildUpon</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-builder/index.html">PaymentParameters.Builder</a></div></div></div>
                 </div>
               </div>
             </div>
