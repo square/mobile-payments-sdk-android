@@ -84,7 +84,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><div class="block"><a href="-o-n-l-i-n-e_-o-n-l-y/index.html">ONLINE_ONLY</a></div></div><div class="brief "><p class="paragraph">In <a href="-o-n-l-i-n-e_-o-n-l-y/index.html">ONLINE_ONLY</a> mode, the payment can only be processed via network call. The payment is <a href="-o-n-l-i-n-e_-o-n-l-y/index.html">ONLINE_ONLY</a> by default.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><div class="block"><a href="-o-n-l-i-n-e_-o-n-l-y/index.html">ONLINE_ONLY</a></div></div><div class="brief "><p class="paragraph">In <a href="-o-n-l-i-n-e_-o-n-l-y/index.html">ONLINE_ONLY</a> mode, the payment can only be processed via network call. In most usage, this option is discouraged because it is fragile to network and server problems.  It is appropriate, however, if a developer's application cannot support <a href="../-payment/-offline-payment/index.html">Payment.OfflinePayment</a> or if it is more important to secure confirmed success than to support resiliency, for example by using <a href="-a-u-t-o_-d-e-t-e-c-t/index.html">AUTO_DETECT</a> instead.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><div class="block"><a href="-o-f-f-l-i-n-e_-o-n-l-y/index.html">OFFLINE_ONLY</a></div></div><div class="brief "><p class="paragraph">In <a href="-o-f-f-l-i-n-e_-o-n-l-y/index.html">OFFLINE_ONLY</a> mode, the payment will be stored in the database, even if connectivity is OK.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><div class="block"><a href="-o-f-f-l-i-n-e_-o-n-l-y/index.html">OFFLINE_ONLY</a></div></div><div class="brief "><p class="paragraph">In <a href="-o-f-f-l-i-n-e_-o-n-l-y/index.html">OFFLINE_ONLY</a> mode, the payment will be stored in the database, even if connectivity is OK. This can offer a faster user experience, but is riskier because the customer will probably have left the shop and disappeared before the bank can approve or deny the offline payment.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -114,7 +114,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><div class="block"><a href="-a-u-t-o_-d-e-t-e-c-t/index.html">AUTO_DETECT</a></div></div><div class="brief "><p class="paragraph">In <a href="-a-u-t-o_-d-e-t-e-c-t/index.html">AUTO_DETECT</a> mode, we will verify the status of the network and Square systems health before processing the payment and determine whether it needs to be processed online or offline.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><div class="block"><a href="-a-u-t-o_-d-e-t-e-c-t/index.html">AUTO_DETECT</a></div></div><div class="brief "><p class="paragraph">In <a href="-a-u-t-o_-d-e-t-e-c-t/index.html">AUTO_DETECT</a> mode, we will verify the status of the network and Square systems health before processing the payment and determine whether it needs to be processed online or offline. This is the preferred processing mode. If the systems are healthy, or if the merchant settings or payment amount require online processing, that will be used as if <a href="-o-n-l-i-n-e_-o-n-l-y/index.html">ONLINE_ONLY</a> had been provided. However, assuming settings and amount allow it, network or server issues will instead trigger offline processing as if by <a href="-o-f-f-l-i-n-e_-o-n-l-y/index.html">OFFLINE_ONLY</a>.</p></div></div></div>
                 </div>
               </div>
             </div>
