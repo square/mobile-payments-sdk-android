@@ -72,6 +72,25 @@
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-1127513568%2FProperties%2F-828611219" anchor-label="trackingConsentState" id="-1127513568%2FProperties%2F-828611219" data-filterable-set=":reader-sdk-2:api:public/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public/main" data-filterable-set=":reader-sdk-2:api:public/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tracking-consent-state.html"><span>tracking</span><wbr></wbr><span>Consent</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1127513568%2FProperties%2F-828611219"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="tracking-consent-state.html">trackingConsentState</a><span class="token operator">: </span><a href="../-tracking-consent-state/index.html">TrackingConsentState</a></div><div class="brief "><p class="paragraph">The current state of user consent for analytics and performance tracking. This field is changed when consent is updated, either through <a href="update-tracking-consent.html">updateTrackingConsent</a> or through the SDK's built-in consent request (shown when users first visit the payment or settings screen, if no consent was previously provided via API).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div data-togglable="FUNCTION">
         <h2 class="">Functions</h2>
         <div class="table"><a data-name="-1112750885%2FFunctions%2F-828611219" anchor-label="getPaymentSettings" id="-1112750885%2FFunctions%2F-828611219" data-filterable-set=":reader-sdk-2:api:public/main"></a>
@@ -115,6 +134,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="show-settings.html"><span class="token function">showSettings</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">onResult<span class="token operator">: </span><span class="token punctuation">(</span><a href="../../com.squareup.sdk.mobilepayments.extensions/-settings-result/index.html">SettingsResult</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Used to display the Mobile Payments SDK settings screen.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2122444297%2FFunctions%2F-828611219" anchor-label="updateTrackingConsent" id="-2122444297%2FFunctions%2F-828611219" data-filterable-set=":reader-sdk-2:api:public/main"></a>
+          <div class="table-row" data-filterable-current=":reader-sdk-2:api:public/main" data-filterable-set=":reader-sdk-2:api:public/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="update-tracking-consent.html"><span>update</span><wbr></wbr><span>Tracking</span><wbr></wbr><span><span>Consent</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2122444297%2FFunctions%2F-828611219"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reader-sdk-2:api:public/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="update-tracking-consent.html"><span class="token function">updateTrackingConsent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">granted<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Enables or disables analytics and performance tracking for the Mobile Payments SDK based on user consent. When <a href="update-tracking-consent.html">granted</a> is set to <code class="lang-kotlin">true</code>, the SDK will collect data to monitor metrics and performance.</p></div></div></div>
                 </div>
               </div>
             </div>
