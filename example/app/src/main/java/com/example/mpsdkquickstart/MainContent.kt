@@ -201,7 +201,8 @@ fun startPaymentActivity(
   // Configure the payment parameters
   val paymentParams = PaymentParameters.Builder(
     amount = Money(100, USD), // $1
-    processingMode = AUTO_DETECT
+    processingMode = AUTO_DETECT,
+    allowCardSurcharge = false, // Surcharging is not supported in the demo app
   )
     .paymentAttemptId(UUID.randomUUID().toString())
     .referenceId("1234")
