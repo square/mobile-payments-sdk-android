@@ -203,8 +203,8 @@ fun startPaymentActivity(
     amount = Money(100, USD), // $1
     processingMode = AUTO_DETECT,
     allowCardSurcharge = false, // Surcharging is not supported in the demo app
+    paymentAttemptId = UUID.randomUUID().toString(),
   )
-    .paymentAttemptId(UUID.randomUUID().toString())
     .referenceId("1234")
     .note("Donut")
     .autocomplete(true)
