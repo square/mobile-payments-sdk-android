@@ -31,14 +31,13 @@ android {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
   }
-  kotlinOptions {
-    jvmTarget = "1.8"
+  kotlin {
+    compilerOptions {
+      jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8)
+    }
   }
   buildFeatures {
     compose = true
-  }
-  composeOptions {
-    kotlinCompilerExtensionVersion = "1.5.15"
   }
   packaging {
     resources {
@@ -50,7 +49,7 @@ android {
 dependencies {
   implementation(libs.androidx.fragment.ktx)
   implementation(libs.androidx.appcompat)
-  val squareSdkVersion = "2.4.0"
+  val squareSdkVersion = "2.5.0"
   // Mobile Payments SDK dependency
   implementation("com.squareup.sdk:mobile-payments-sdk:$squareSdkVersion")
 
