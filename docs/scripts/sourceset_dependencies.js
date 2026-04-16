@@ -1,1 +1,1 @@
-sourceset_dependencies='{":reader-sdk-2:api:public/main":[]}'
+sourceset_dependencies='{":reader-sdk-2:thirdparty-api:public/main":[]}'
