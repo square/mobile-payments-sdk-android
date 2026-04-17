@@ -1,12 +1,33 @@
 # Mobile Payments SDK Quickstart Sample Android Application
 
-![Version](https://img.shields.io/badge/version-2.5.0-brightgreen)
+![Version](https://img.shields.io/badge/version-2.5.0-brightgreen) ![minSdk](https://img.shields.io/badge/minSdk-28-blue) ![targetSdk](https://img.shields.io/badge/targetSdk-35-blue) ![Kotlin](https://img.shields.io/badge/kotlin-2.2.21-7F52FF?logo=kotlin&logoColor=white)
 
 This is a sample application for building with the Square [Mobile Payments SDK](https://developer.squareup.com/docs/mobile-payments-sdk) on Android. It creates a simple application that demonstrates installing, initializing, and authorizing the SDK, as well as taking a $1.00 payment with the Sandbox mock reader. To get started, clone this repo and follow the steps below.
 
 > For more detailed steps on adding the SDK to your application, please see the [longform documentation](https://developer.squareup.com/docs/mobile-payments-sdk/android).
 
-<img src="./images/main_screen.png" width=200>
+<img src="./images/main_screen.png" width=200 alt="Main screen of the sample app showing the Buy for $1 button">
+
+## Table of Contents
+- [Requirements](#requirements)
+- [1. Review requirements](#1-review-requirements)
+- [2. Get application credentials](#2-get-application-credentials)
+- [3. Set credentials](#3-set-credentials)
+- [4. Run the app](#4-run-the-app)
+- [5. Request permissions](#5-request-permissions)
+- [6. Authorize the application](#6-authorize-the-application)
+- [7. Settings](#7-settings)
+- [8. Payment](#8-payment)
+- [Support](#support)
+
+## Requirements
+- **Android minSdk**: 28 (Android 9.0)
+- **Compile / target SDK**: 35
+- **Kotlin**: 2.2.21
+- **Android Gradle Plugin**: 8.13.0
+- A [Square Developer account](https://developer.squareup.com/apps) with a Sandbox application
+
+See also the full [Requirements and Limitations](https://developer.squareup.com/docs/mobile-payments-sdk/android#requirements-and-limitations) in the SDK docs.
 
 ## 1. Review requirements
 Before getting started, please review the [Requirements and Limitations](https://developer.squareup.com/docs/mobile-payments-sdk/android#requirements-and-limitations) and [Device Compatibility](https://developer.squareup.com/docs/mobile-payments-sdk/android#device-permissions) sections to ensure that the SDK can be used in your project.
@@ -53,7 +74,7 @@ In the top right, tap the "Permissions" button. Tap on each of the checkboxes an
 
 In a real application, you'll need to implement this screen yourself.
 
-<img src="./images/permissions_screen.png" width=200>
+<img src="./images/permissions_screen.png" width=200 alt="Permissions dialog with a checkbox for each required device permission">
 
 ## 6. Authorize the application
 Still within the Permissions dialog, click "Sign in" to authorize the SDK. This creates `MobilePaymentsSdk.authorizationManager()` and calls `authorize()`, which authorizes the SDK using the credentials you set.
@@ -64,18 +85,23 @@ After authorizing, close the Permissions dialog to return to the main screen.
 
 Note that since you're authorized in Sandbox mode, the floating [Mock Reader UI](https://developer.squareup.com/docs/mobile-payments-sdk/android#4-test-with-mock-readers-in-the-square-sandbox) button is displayed (via `MockReaderUI.show()`).
 
-<img src="./images/mock_reader_button.webp">
+<img src="./images/mock_reader_button.webp" alt="Floating Mock Reader UI button shown in Sandbox mode">
 
 You can tap on this to simulate adding a Magstripe or Contactless & Chip Reader, as well as simulate swiping/tapping/inserting a card.
 
 ## 7. Settings
 On the main screen, you can click "Settings" in the top left to display the reader settings screen. This is a preconfigured screen that's included with the SDK, so you *do not* need to implement it yourself. It's displayed by calling `settingsManager.showSettings()`. For more information, see our docs on [Settings Manager](https://developer.squareup.com/docs/mobile-payments-sdk/android/pair-manage-readers#settings-manager).
 
-<img src="./images/settings_screen.png" width=200>
+<img src="./images/settings_screen.png" width=200 alt="Reader settings screen displayed by the SDK">
 
 ## 8. Payment
-Back on the main scren, tap the "Buy for $1" button. You'll be brought to a checkout screen requesting a $1 payment. Tap the Mock Reader UI button -> Add Contactless & Chip Reader -> Tap Card
+Back on the main screen, tap the "Buy for $1" button. You'll be brought to a checkout screen requesting a $1 payment. Tap the Mock Reader UI button -> Add Contactless & Chip Reader -> Tap Card
 
 After doing so, a test payment will be processed to your Sandbox account. You can verify that it was completed on your [Sandbox Seller Dashboard](https://developer.squareup.com/docs/devtools/sandbox/overview) Transactions page.
 
-<img src="./images/payment_screen.png" width=200>
+<img src="./images/payment_screen.png" width=200 alt="Checkout screen requesting a $1.00 payment">
+
+## Support
+- **SDK bugs or feature requests**: [open an issue](https://github.com/square/mobile-payments-sdk-android/issues) on this repo.
+- **General SDK questions**: ask on the [Square Developer Forums](https://developer.squareup.com/forums/) or join the [Square Developer Slack](https://squ.re/sq-developers-slack).
+- **Product documentation**: [Mobile Payments SDK docs](https://developer.squareup.com/docs/mobile-payments-sdk/android).
