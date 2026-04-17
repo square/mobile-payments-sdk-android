@@ -9,7 +9,6 @@ This is a sample application for building with the Square [Mobile Payments SDK](
 <img src="./images/main_screen.png" width=200 alt="Main screen of the sample app showing the Buy for $1 button">
 
 ## Table of Contents
-- [Requirements](#requirements)
 - [1. Review requirements](#1-review-requirements)
 - [2. Get application credentials](#2-get-application-credentials)
 - [3. Set credentials](#3-set-credentials)
@@ -18,16 +17,6 @@ This is a sample application for building with the Square [Mobile Payments SDK](
 - [6. Authorize the application](#6-authorize-the-application)
 - [7. Settings](#7-settings)
 - [8. Payment](#8-payment)
-- [Support](#support)
-
-## Requirements
-- **Android minSdk**: 28 (Android 9.0)
-- **Compile / target SDK**: 35
-- **Kotlin**: 2.2.21
-- **Android Gradle Plugin**: 8.13.0
-- A [Square Developer account](https://developer.squareup.com/apps) with a Sandbox application
-
-See also the full [Requirements and Limitations](https://developer.squareup.com/docs/mobile-payments-sdk/android#requirements-and-limitations) in the SDK docs.
 
 ## 1. Review requirements
 Before getting started, please review the [Requirements and Limitations](https://developer.squareup.com/docs/mobile-payments-sdk/android#requirements-and-limitations) and [Device Compatibility](https://developer.squareup.com/docs/mobile-payments-sdk/android#device-permissions) sections to ensure that the SDK can be used in your project.
@@ -100,8 +89,3 @@ Back on the main screen, tap the "Buy for $1" button. You'll be brought to a che
 After doing so, a test payment will be processed to your Sandbox account. You can verify that it was completed on your [Sandbox Seller Dashboard](https://developer.squareup.com/docs/devtools/sandbox/overview) Transactions page.
 
 <img src="./images/payment_screen.png" width=200 alt="Checkout screen requesting a $1.00 payment">
-
-## Support
-- **SDK bugs or feature requests**: [open an issue](https://github.com/square/mobile-payments-sdk-android/issues) on this repo.
-- **General SDK questions**: ask on the [Square Developer Forums](https://developer.squareup.com/forums/) or join the [Square Developer Slack](https://squ.re/sq-developers-slack).
-- **Product documentation**: [Mobile Payments SDK docs](https://developer.squareup.com/docs/mobile-payments-sdk/android).
