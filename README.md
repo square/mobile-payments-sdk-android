@@ -1,5 +1,7 @@
 # Mobile Payments SDK Quickstart Sample Android Application
 
+![Version](https://img.shields.io/badge/version-2.5.0-brightgreen)
+
 This is a sample application for building with the Square [Mobile Payments SDK](https://developer.squareup.com/docs/mobile-payments-sdk) on Android. It creates a simple application that demonstrates installing, initializing, and authorizing the SDK, as well as taking a $1.00 payment with the Sandbox mock reader. To get started, clone this repo and follow the steps below.
 
 > For more detailed steps on adding the SDK to your application, please see the [longform documentation](https://developer.squareup.com/docs/mobile-payments-sdk/android).
