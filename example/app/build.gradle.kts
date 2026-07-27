@@ -6,12 +6,12 @@ plugins {
 
 android {
   namespace = "com.example.mpsdkquickstart"
-  compileSdk = 35
+  compileSdk = 36
 
   defaultConfig {
     applicationId = "com.example.mpsdkquickstart"
     minSdk = 28
-    targetSdk = 35
+    targetSdk = 36
     versionCode = 1
     versionName = "1.0"
 
@@ -49,7 +49,7 @@ android {
 dependencies {
   implementation(libs.androidx.fragment.ktx)
   implementation(libs.androidx.appcompat)
-  val squareSdkVersion = "2.5.0"
+  val squareSdkVersion = "2.6.0"
   // Mobile Payments SDK dependency
   implementation("com.squareup.sdk:mobile-payments-sdk:$squareSdkVersion")
 

@@ -1,6 +1,6 @@
 # Mobile Payments SDK Quickstart Sample Android Application
 
-![Version](https://img.shields.io/badge/version-2.5.0-brightgreen) ![minSdk](https://img.shields.io/badge/minSdk-28-blue) ![targetSdk](https://img.shields.io/badge/targetSdk-35-blue) ![Kotlin](https://img.shields.io/badge/kotlin-2.2.21-7F52FF?logo=kotlin&logoColor=white)
+![Version](https://img.shields.io/badge/version-2.6.0-brightgreen) ![minSdk](https://img.shields.io/badge/minSdk-28-blue) ![targetSdk](https://img.shields.io/badge/targetSdk-36-blue) ![Kotlin](https://img.shields.io/badge/kotlin-2.2.21-7F52FF?logo=kotlin&logoColor=white)
 
 This is a sample application for building with the Square [Mobile Payments SDK](https://developer.squareup.com/docs/mobile-payments-sdk) on Android. It creates a simple application that demonstrates installing, initializing, and authorizing the SDK, as well as taking a $1.00 payment with the Sandbox mock reader. To get started, clone this repo and follow the steps below.
 
