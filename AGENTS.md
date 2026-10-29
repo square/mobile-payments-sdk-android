@@ -3,7 +3,7 @@
 Guidance for coding agents **integrating the Mobile Payments SDK into an Android app**.
 This repo is the Donut Counter quickstart sample; `example/` is a working reference, not the SDK source.
 
-Current SDK version: **2.6.1**.
+Current SDK version: **2.7.0**.
 
 ## Dependencies
 
@@ -22,7 +22,7 @@ dependencyResolutionManagement {
 Then in the app module's `build.gradle.kts`:
 
 ```kotlin
-val squareSdkVersion = "2.6.1"
+val squareSdkVersion = "2.7.0"
 implementation("com.squareup.sdk:mobile-payments-sdk:$squareSdkVersion")
 // Sandbox-only. Do not ship in release builds.
 implementation("com.squareup.sdk:mockreader-ui:$squareSdkVersion")
@@ -37,9 +37,10 @@ These silently break integrations. Check them before writing any code.
 | Constraint | Value |
 | :--- | :--- |
 | `minSdk` | 28 (Android 9) |
-| `compileSdk` / `targetSdk` | 36 |
-| Android Gradle Plugin | 8.9.1 or later |
-| Gradle | 8.13 or later |
+| `compileSdk` | 37 |
+| `targetSdk` | 36 |
+| Android Gradle Plugin | 9.1.0 or later |
+| Gradle | 9.3.1 or later |
 | AndroidX | required (or `android.enableJetifier=true`) |
 
 **Proguard / R8 is not supported.** The SDK does not ship consumer rules covering everything it needs, and shrinking strips bytecode it loads reflectively at runtime. Set both flags off in every build type that ships the SDK:
@@ -55,7 +56,7 @@ buildTypes {
 
 This is the single most expensive thing to get wrong: the debug build works, the release build compiles, and the failure only appears at runtime. Do not "fix" it by adding keep rules.
 
-The AGP/Gradle floor comes from `androidx.core:core:1.18.0`, which SDK 2.6.x depends on. Older values fail during dependency resolution, not at runtime.
+The AGP floor comes from Jetpack Compose 1.12, which SDK 2.7.x depends on; AGP 9.1.0 in turn requires Gradle 9.3.1. The SDK's AARs also declare `minCompileSdk=37`. Older values fail the `checkAarMetadata` task at build time, not at runtime. AGP 9 has built-in Kotlin support, so remove the `org.jetbrains.kotlin.android` plugin when upgrading (AGP 9 refuses to apply it).
 
 Taking **production** payments with SDK 2.1+ also requires submitting an application signature to Square beforehand. Sandbox does not.
 
@@ -161,7 +162,7 @@ Fetch the `.md` variants. The HTML pages are iframe shells and return only navig
 - Offline payments — https://developer.squareup.com/docs/mobile-payments-sdk/android/offline-payments.md
 - API reference — https://developer.squareup.com/docs/sdk/mobile-payments/android
 
-Note that the docs page currently lists `compileSdkVersion` 35; 2.6.x requires 36, as this sample uses.
+SDK 2.7.x requires `compileSdk` 37, Android Gradle Plugin 9.1.0+, and Gradle 9.3.1+, as this sample uses.
 
 ## Repo layout
 
